@@ -1,0 +1,9 @@
+<h3>Send with the following contents.</h3>
+<%= form_with(model: @tweeet, url: tweeets_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <p>title:<%= @tweeet.title %></p>
+  <p>content:<%= @tweeet.content %></p>
+  <%= form.submit  "confirm" %>
+  <%= link_to 'Back', tweeet_path %>
+<% end %>

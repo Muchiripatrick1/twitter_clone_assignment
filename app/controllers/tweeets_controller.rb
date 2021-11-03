@@ -33,7 +33,10 @@ class TweeetsController < ApplicationController
       end
     end
   end
-
+  def confirm
+    @tweeet = tweeet.new(tweeet_params)
+    render :new if @tweeet.invalid?
+  end
   # PATCH/PUT /tweeets/1 or /tweeets/1.json
   def update
     respond_to do |format|
