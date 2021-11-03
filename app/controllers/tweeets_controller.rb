@@ -34,7 +34,7 @@ class TweeetsController < ApplicationController
     end
   end
   def confirm
-    @tweeet = tweeet.new(tweeet_params)
+    @tweeet = Tweeet.new(tweeet_params)
     render :new if @tweeet.invalid?
   end
   # PATCH/PUT /tweeets/1 or /tweeets/1.json
@@ -67,6 +67,6 @@ class TweeetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tweeet_params
-      params.require(:tweeet).permit(:tweeet)
+      params.require(:tweeet).permit(:tweeet, :title)
     end
 end
